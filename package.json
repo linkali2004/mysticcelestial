@@ -30,6 +30,10 @@
     "src/addons/volto-mysticcelestial",
     "src/addons/mysticcelestialtheme"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linkali2004/mysticcelestial"
+  },
   "addons": [
     "volto-mysticcelestial",
     "mysticcelestialtheme"

@@ -104,3 +104,18 @@ test-acceptance-addon-headless: ## Start Core Cypress Acceptance Tests for an ad
 .PHONY: full-test-acceptance-addon
 full-test-acceptance-addon: ## Runs Core Full Acceptance Testing for an addon in headless mode
 	$(NODEBIN)/start-test "make start-test-acceptance-server" http-get://127.0.0.1:55001/plone "make start-test-acceptance-frontend" http://127.0.0.1:3000 "make test-acceptance-addon-headless"
+
+
+# New target: release
+.PHONY: release
+release: ## Releases the add-on to npm
+	@echo "$(GREEN)==> Releasing the add-on to npm$(RESET)"
+	# Ensure the working directory is clean
+	@if [ -n "$$(git status --porcelain)" ]; then \
+	  echo "Working directory is not clean. Please commit your changes first."; \
+	  exit 1; \
+	fi
+	# Bump the version (patch bump by default; change to 'minor' or 'major' as needed)
+	npm version patch
+	# Publish the package to npm
+	npm publish
