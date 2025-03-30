@@ -1,0 +1,8 @@
+{
+  "volto-mysticcelestial": {
+    "local": "addons/volto-mysticcelestial/src"
+  },
+  "mysticcelestialtheme": {
+    "local": "addons/mysticcelestialtheme/src"
+  }
+}
